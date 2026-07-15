@@ -1,0 +1,33 @@
+{
+  "name": "Quake Ports \u2014 Apple Vision Pro",
+  "identifier": "com.rebelancap.quakeports.visionos",
+  "subtitle": "Quake 1, 2 & 3 in 2D and stereoscopic 3D",
+  "description": "Pristine Apple Vision Pro ports of Quake, Quake II, and Quake III Arena, with a world-locked stereoscopic 3D mode. Bring your own game data.",
+  "website": "https://github.com/rebelancap/quake-ports",
+  "tintColor": "#8a1a1a",
+  "iconURL": "https://raw.githubusercontent.com/rebelancap/quake-ports/main/assets/source-icon.png",
+  "apps": [
+    {
+      "name": "vkQuake",
+      "bundleIdentifier": "com.rebelancap.vkquake",
+      "developerName": "rebelancap",
+      "subtitle": "Quake for iPhone & Vision Pro",
+      "localizedDescription": "The full Quake campaign, mission packs, QuakeC mods, and \u2014 on Apple Vision Pro \u2014 a stereoscopic 3D mode. Built on vkQuake. Ships with no game content; you supply your own Quake files.",
+      "iconURL": "https://raw.githubusercontent.com/rebelancap/quake-ports/main/assets/vkquake.png",
+      "tintColor": "#8a1a1a",
+      "category": "games",
+      "screenshotURLs": [],
+      "versions": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-15T06:55:22Z",
+          "localizedDescription": "**Quake for iPhone, iPad, and Apple Vision Pro** \u2014 a native port of [vkQuake](https://github.com/Novum/vkQuake) (Vulkan via MoltenVK), including a world-locked **stereoscopic 3D mode** on Apple Vision Pro.\n\nShips with **no game content** \u2014 you supply your own Quake files (2021 re-release recommended; original `pak0`/`pak1` also works).\n\n### Downloads\n- **`vkQuake-1.0.0-iOS.ipa`** \u2014 iPhone / iPad (iOS 16+)\n- **`vkQuake-1.0.0-visionOS.ipa`** \u2014 Apple Vision Pro (visionOS 2+)\n\nSideload with [SideStore](https://sidestore.io) / [AltStore](https://altstore.io) (iPhone) or [iloader](https://github.com/rebelancap/iloader/releases#release-visionos) (Vision Pro). Full instructions in the [README](https://github.com/rebelancap/vkQuake-ios#readme).\n\n### What's in it\n- Full single-player campaign with saves, both mission packs, and the re-release episodes (Dimension of the Past, Dimension of the Machine)\n- QuakeC mods \u2014 drop a mod folder in and launch it from a generated menu (Arcane Dimensions, Copper, Alkaline, \u2026)\n- Music, all sound, demos, and the full menu/console by touch or controller\n- Game controllers, on-screen touch sticks, and gyro aim\n- 60 / 120 Hz (ProMotion), in-app settings that persist\n- **Apple Vision Pro:** free-resizing 2D window, plus a 3D mode \u2014 the game on a world-locked stereoscopic panel with live-tunable screen size, distance, depth, and room dimming\n\nGPLv2, matching upstream vkQuake. QUAKE \u00a9 id Software.",
+          "downloadURL": "https://github.com/rebelancap/vkQuake-ios/releases/download/v1.0.0/vkQuake-1.0.0-visionOS.ipa",
+          "size": 5591727,
+          "minOSVersion": "2.0"
+        }
+      ]
+    }
+  ],
+  "news": []
+}

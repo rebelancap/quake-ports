@@ -1,0 +1,41 @@
+name: Build SideStore sources
+
+on:
+  # Regenerate on a schedule so new app releases are picked up automatically.
+  schedule:
+    - cron: "17 */3 * * *"      # every 3 hours
+  # Manual run button in the Actions tab.
+  workflow_dispatch:
+  # Optional: let an app repo trigger an immediate rebuild (see README).
+  repository_dispatch:
+    types: [app-released]
+
+permissions:
+  contents: write               # to commit the regenerated JSON
+
+concurrency:
+  group: build-sources
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Regenerate source JSON
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 generate.py
+
+      - name: Commit if changed
+        run: |
+          if [ -n "$(git status --porcelain apps-ios.json apps-visionos.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add apps-ios.json apps-visionos.json
+            git commit -m "chore: refresh SideStore sources"
+            git push
+          else
+            echo "No changes."
+          fi
