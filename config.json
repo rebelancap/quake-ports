@@ -22,7 +22,7 @@
   },
   "apps": [
     {
-      "name": "vkQuake",
+      "name": "Quake",
       "bundleIdentifier": "com.rebelancap.vkquake",
       "repo": "rebelancap/vkQuake-ios",
       "developerName": "rebelancap",

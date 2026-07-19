@@ -8,7 +8,7 @@
   "iconURL": "https://raw.githubusercontent.com/rebelancap/quake-ports/main/assets/source-icon.png",
   "apps": [
     {
-      "name": "vkQuake",
+      "name": "Quake",
       "bundleIdentifier": "com.rebelancap.vkquake",
       "developerName": "rebelancap",
       "subtitle": "Quake for iPhone & Vision Pro",
