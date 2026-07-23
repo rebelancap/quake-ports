@@ -35,7 +35,7 @@
       "screenshotURLs": []
     },
     {
-      "name": "Quake II",
+      "name": "q2repro",
       "bundleIdentifier": "com.rebelancap.q2repro",
       "repo": "rebelancap/q2repro-ios",
       "developerName": "rebelancap",
