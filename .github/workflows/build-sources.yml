@@ -3,7 +3,12 @@ name: Build SideStore sources
 on:
   # Regenerate on a schedule so new app releases are picked up automatically.
   schedule:
-    - cron: "17 * * * *"        # hourly (unchanged runs are ~free API calls; cuts worst-case update lag 3h -> 1h)
+    - cron: "*/10 * * * *"      # every 10 min. This is the SAFETY NET, not the main path:
+                                # rebelancap/all-ports fans an app-released dispatch out to
+                                # this repo on every release, so the normal case is seconds.
+                                # The tight cron bounds the damage when that token is
+                                # missing/expired/misscoped to ~10 min instead of ~1 h.
+                                # Unchanged runs are ~free API calls.
   # Manual run button in the Actions tab.
   workflow_dispatch:
   # Optional: let an app repo trigger an immediate rebuild (see README).
