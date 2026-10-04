@@ -1,6 +1,6 @@
 # Quake Ports — SideStore sources
 
-Two SideStore/AltStore sources that bundle the three Quake ports and update
+Two SideStore/AltStore sources that bundle the four Quake ports and update
 themselves when a new release ships.
 
 ## Add to SideStore
