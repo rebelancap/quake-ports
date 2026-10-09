@@ -3,12 +3,24 @@
 Two SideStore/AltStore sources that bundle the four Quake ports and update
 themselves when a new release ships.
 
-## Add to SideStore
+## Add the SideStore source
 
-- **iPhone & iPad:** `https://raw.githubusercontent.com/rebelancap/quake-ports/main/apps-ios.json`
-- **Apple Vision Pro:** `https://raw.githubusercontent.com/rebelancap/quake-ports/main/apps-visionos.json`
+| Device | Source | Source URL |
+| --- | --- | --- |
+| iPhone / iPad | Quake ports | `https://raw.githubusercontent.com/rebelancap/quake-ports/main/apps-ios.json` |
+| iPhone / iPad | All ports | `https://raw.githubusercontent.com/rebelancap/all-ports/main/apps-ios.json` |
+| Apple Vision Pro | Quake ports | `https://raw.githubusercontent.com/rebelancap/quake-ports/main/apps-visionos.json` |
+| Apple Vision Pro | All ports | `https://raw.githubusercontent.com/rebelancap/all-ports/main/apps-visionos.json` |
 
-(In SideStore: *Sources → + → paste the URL*.)
+Every app here is in both sources — add either one (Quake ports carries just the Quake
+family; [All ports](https://github.com/rebelancap/all-ports) carries every rebelancap port).
+
+In [SideStore](https://sidestore.io) / [AltStore](https://altstore.io): *Sources → **+** → paste the URL*.
+
+On **Apple Vision Pro**, first install SideStore onto the headset with
+[iloader](https://github.com/rebelancap/iloader/releases#release-visionos) (SideStore/AltStore can't be
+installed on visionOS the usual way — iloader is what gets SideStore there). Then add the source in
+SideStore exactly as above.
 
 ## How it works
 
@@ -17,8 +29,9 @@ picks one iOS IPA (a `.ipa` whose name does **not** contain `vision`/`xros`) and
 visionOS IPA (name **does** contain `vision`/`xros`), reads each IPA's
 `CFBundleShortVersionString`, and writes `apps-ios.json` + `apps-visionos.json`.
 
-The `.github/workflows/build-sources.yml` Action runs it every 3 hours (and on demand),
-committing the refreshed JSON. SideStore polls the raw URLs, so a new app release
+The `.github/workflows/build-sources.yml` Action runs it the moment a port publishes a
+release (each port repo dispatches `app-released` via `rebelancap/all-ports`), plus a
+10-minute cron as a safety net and on demand, committing the refreshed JSON. SideStore polls the raw URLs, so a new app release
 propagates to users with no manual step.
 
 ## Setup (one time)
